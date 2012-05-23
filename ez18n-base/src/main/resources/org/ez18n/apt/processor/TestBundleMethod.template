@@ -1,0 +1,5 @@
+
+    @org.junit.Test
+    public void ${method.name}() {
+    	assertNotNull(${bundle.class.name}.MSG_${source.class.name.camel}.${method.name}(${input.params}));
+    }

@@ -1,0 +1,9 @@
+package ${package.name};
+
+import static org.junit.Assert.assertNotNull;
+
+public class ${target.class.name} {
+
+${methods.code}
+ 
+}

@@ -8,3 +8,5 @@ org.ez18n.apt.processor.SiteBundleProcessor
 org.ez18n.apt.processor.SiteMessagesProcessor
 org.ez18n.apt.processor.SiteMessagesProcessor
 org.ez18n.apt.processor.SiteBundlePropertiesProcessor
+org.ez18n.apt.processor.TestSiteBundleProcessor
+org.ez18n.apt.processor.TestMobileBundleProcessor
