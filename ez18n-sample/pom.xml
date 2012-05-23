@@ -67,9 +67,9 @@
 								<processor>org.ez18n.apt.processor.SiteBundlePropertiesProcessor</processor>
 								<processor>org.ez18n.apt.processor.CSVReportProcessor</processor>
 							</processors>
+							<outputDiagnostics>true</outputDiagnostics>
 						</configuration>
 					</execution>
-					<!-- 
 					<execution>
 						<id>generate-i18n-test</id>
 						<goals>
@@ -84,9 +84,9 @@
 								<processor>org.ez18n.apt.processor.TestMobileBundleProcessor</processor>
 							</processors>
 							<sourceDirectory>${project.build.sourceDirectory}</sourceDirectory>
+							<outputDiagnostics>true</outputDiagnostics>
 						</configuration>
-					</execution>
-				 -->
+					      </execution>
 				</executions>
 			</plugin>
 		</plugins>
