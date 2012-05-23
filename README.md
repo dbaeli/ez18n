@@ -2,17 +2,17 @@ ez18n
 =====
 
 Pre-requis:
-- apt 1/2h
-- encoding 15min
+- apt: 30min
+- encoding: 15min
 
 
 Gouvernance:
-- i18n, l10n 1/2h
+- i18n, l10n: 30min
 
-pause. 
+[pause]
 
-Hands-on
-- Pattern APT, plugin maven, gwt, excel :  45min
-- Crowd Sourcing - 15m
+Hands-on:
+- Pattern APT, plugin maven, gwt, excel:  45min
+- Crowd Sourcing: 15m
 
 QA : 15min
