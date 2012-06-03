@@ -1,5 +1,7 @@
 *.class
-
+.idea
+*.iml
+atlassian-*.xml
 # Package Files #
 *.jar
 *.war
