@@ -1,5 +1,7 @@
 package com.google.gwt.sample.stockwatcher.client;
 
+import static com.google.gwt.sample.stockwatcher.client.LabelMessagesFactory.MSG_LR;
+
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -28,7 +30,7 @@ public class StockWatcher implements EntryPoint {
     private FlexTable stocksFlexTable = new FlexTable();
     private HorizontalPanel addPanel = new HorizontalPanel();
     private TextBox newSymbolTextBox = new TextBox();
-    private Button addStockButton = new Button("Add");
+    private Button addStockButton = new Button(MSG_LR().add());
     private Label lastUpdatedLabel = new Label();
     private ArrayList<String> stocks = new ArrayList<String>();
 
@@ -37,10 +39,10 @@ public class StockWatcher implements EntryPoint {
      */
     public void onModuleLoad() {
         // Create table for stock data.
-        stocksFlexTable.setText(0, 0, "Symbol");
-        stocksFlexTable.setText(0, 1, "Price");
-        stocksFlexTable.setText(0, 2, "Change");
-        stocksFlexTable.setText(0, 3, "Remove");
+        stocksFlexTable.setText(0, 0, MSG_LR().symbol());
+        stocksFlexTable.setText(0, 1, MSG_LR().price());
+        stocksFlexTable.setText(0, 2, MSG_LR().change());
+        stocksFlexTable.setText(0, 3, MSG_LR().remove());
 
         // Add styles to elements in the stock list table.
         stocksFlexTable.setCellPadding(6);
@@ -168,7 +170,7 @@ public class StockWatcher implements EntryPoint {
             updateTable(prices[i]);
         }
         // Display timestamp showing last refresh.
-        lastUpdatedLabel.setText("Last update : " + DateTimeFormat.getMediumDateTimeFormat().format(new Date()));
+        lastUpdatedLabel.setText(MSG_LR().lastUpdate() + DateTimeFormat.getMediumDateTimeFormat().format(new Date()));
     }
 
     /**

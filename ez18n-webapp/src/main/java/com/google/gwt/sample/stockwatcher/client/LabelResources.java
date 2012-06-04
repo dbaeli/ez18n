@@ -1,7 +1,5 @@
 package com.google.gwt.sample.stockwatcher.client;
 
-import java.util.Date;
-
 import org.ez18n.apt.Label;
 import org.ez18n.apt.LabelBundle;
 
@@ -21,7 +19,7 @@ public interface LabelResources {
     String remove();
 
     @Label("Last update : ")
-    String lastUpdate(Date lastUpdate);
+    String lastUpdate();
     
     @Label("Add")
     String add();
