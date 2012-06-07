@@ -6,21 +6,21 @@ import org.ez18n.apt.LabelBundle;
 @LabelBundle
 public interface LabelResources {
 
-    @Label("Symbol")
+    @Label(value = "Symbol", mobile = "SYMBOL")
     String symbol();
 
-    @Label("Price")
+    @Label(value = "Price", mobile = "PRICE")
     String price();
 
-    @Label("Change")
+    @Label(value = "Change", mobile = "CHANGE")
     String change();
 
-    @Label("Remove")
+    @Label(value = "Remove", mobile = "REMOVE")
     String remove();
 
     @Label("Last update : ")
     String lastUpdate();
-    
+
     @Label("Add")
     String add();
 }
