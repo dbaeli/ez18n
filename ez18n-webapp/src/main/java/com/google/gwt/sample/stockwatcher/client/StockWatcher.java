@@ -12,7 +12,6 @@ import com.google.gwt.event.dom.client.KeyCodes;
 import com.google.gwt.event.dom.client.KeyPressEvent;
 import com.google.gwt.event.dom.client.KeyPressHandler;
 import com.google.gwt.i18n.client.DateTimeFormat;
-import com.google.gwt.i18n.client.NumberFormat;
 import com.google.gwt.user.client.Random;
 import com.google.gwt.user.client.Timer;
 import com.google.gwt.user.client.Window;
@@ -46,11 +45,12 @@ public class StockWatcher implements EntryPoint {
 
         // Add styles to elements in the stock list table.
         stocksFlexTable.setCellPadding(6);
-        stocksFlexTable.getRowFormatter().addStyleName(0, "watchListHeader");
-        stocksFlexTable.addStyleName("watchList");
-        stocksFlexTable.getCellFormatter().addStyleName(0, 1, "watchListNumericColumn");
-        stocksFlexTable.getCellFormatter().addStyleName(0, 2, "watchListNumericColumn");
-        stocksFlexTable.getCellFormatter().addStyleName(0, 3, "watchListRemoveColumn");
+        stocksFlexTable.getRowFormatter().addStyleName(0, MSG_LR().styleWatchListHeader());
+        stocksFlexTable.addStyleName(MSG_LR().styleWatchList());
+        stocksFlexTable.getCellFormatter().addStyleName(0, 0, MSG_LR().styleWatchListNumericColumn());
+        stocksFlexTable.getCellFormatter().addStyleName(0, 1, MSG_LR().styleWatchListNumericColumn());
+        stocksFlexTable.getCellFormatter().addStyleName(0, 2, MSG_LR().styleWatchListNumericColumn());
+        stocksFlexTable.getCellFormatter().addStyleName(0, 3, MSG_LR().styleWatchListRemoveColumn());
 
         // Assemble Add Stock panel.
         addPanel.add(newSymbolTextBox);
@@ -121,9 +121,10 @@ public class StockWatcher implements EntryPoint {
         stocks.add(symbol);
         stocksFlexTable.setText(row, 0, symbol);
         stocksFlexTable.setWidget(row, 2, new Label());
-        stocksFlexTable.getCellFormatter().addStyleName(row, 1, "watchListNumericColumn");
-        stocksFlexTable.getCellFormatter().addStyleName(row, 2, "watchListNumericColumn");
-        stocksFlexTable.getCellFormatter().addStyleName(row, 3, "watchListRemoveColumn");
+        stocksFlexTable.getCellFormatter().addStyleName(row, 0, MSG_LR().styleWatchListNumericColumn());
+        stocksFlexTable.getCellFormatter().addStyleName(row, 1, MSG_LR().styleWatchListNumericColumn());
+        stocksFlexTable.getCellFormatter().addStyleName(row, 2, MSG_LR().styleWatchListNumericColumn());
+        stocksFlexTable.getCellFormatter().addStyleName(row, 3, MSG_LR().styleWatchListRemoveColumn());
 
         // Add a button to remove this stock from the table.
         Button removeStockButton = new Button("x");
@@ -170,7 +171,8 @@ public class StockWatcher implements EntryPoint {
             updateTable(prices[i]);
         }
         // Display timestamp showing last refresh.
-        lastUpdatedLabel.setText(MSG_LR().lastUpdate() + DateTimeFormat.getMediumDateTimeFormat().format(new Date()));
+        final String dateAsString = MSG_LR().lastUpdate(DateTimeFormat.getMediumDateTimeFormat().format(new Date()));
+        lastUpdatedLabel.setText(dateAsString);
     }
 
     /**
@@ -186,16 +188,10 @@ public class StockWatcher implements EntryPoint {
 
         int row = stocks.indexOf(price.getSymbol()) + 1;
 
-        // Format the data in the Price and Change fields.
-        String priceText = NumberFormat.getFormat("#,##0.00").format(price.getPrice());
-        NumberFormat changeFormat = NumberFormat.getFormat("+#,##0.00;-#,##0.00");
-        String changeText = changeFormat.format(price.getChange());
-        String changePercentText = changeFormat.format(price.getChangePercent());
-
         // Populate the Price and Change fields with new data.
-        stocksFlexTable.setText(row, 1, priceText);
+        stocksFlexTable.setText(row, 1, MSG_LR().priceValue(price.getPrice()));
         Label changeWidget = (Label) stocksFlexTable.getWidget(row, 2);
-        changeWidget.setText(changeText + " (" + changePercentText + "%)");
+        changeWidget.setText(MSG_LR().changeValue(price.getChange(), price.getChangePercent()));
 
         // Change the color of text in the Change field based on its value.
         String changeStyleName = "noChange";
