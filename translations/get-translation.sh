@@ -12,7 +12,7 @@ KEY=$2
 #curl http://api.crowdin.net/api/project/ez18n-demo/export?key=$KEY
 
 echo Downloading LANG=$LANG
-wget http://api.crowdin.net/api/project/ez18n-demo/download/$LANG.zip?key=$KEY -O fr.zip
+wget http://api.crowdin.net/api/project/ez18n-demo/download/$LANG.zip?key=$KEY -O $LANG.zip
 
 echo Unzip 
 TDIR=${LANG}_`date +%s`
@@ -28,6 +28,8 @@ done
 
 cd $TDIR
 zip -r ../ez18n_$LANG.zip *
+cd ..
 
 echo prepared ez18n_$LANG.zip
-rm -rf $TDIR
+rm -rf $TDIR $LANG.zip
+
