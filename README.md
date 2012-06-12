@@ -1,9 +1,8 @@
 ez18n
 =====
 
-Pre-requis:
-
-1. apt: 30min (gilles)
+apt: 30min (gilles)
+-------------------
 
     * APT qu'est ce que c'est
     * appeler en ligne de commande
@@ -21,16 +20,17 @@ Pre-requis:
     * compilation une ou deux passes ?
     * APT dans mon IDE
 
-2. encoding: 15min (dimitri)
+encoding: 15min (dimitri)
+-------------------------
 
-3. Gouvernance:
-* i18n, l10n: 30min (dimitri)
+Gouvernance: i18n, l10n: 30min (dimitri)
+---------------------------------------
 
 [pause]
 
-3. Hands-on:
 
-* Pattern APT, plugin maven, gwt:  45min (gilles)
+Pattern APT, plugin maven, gwt:  45min (gilles)
+-----------------------------------------------
 
     * Introduction à i18n avec GWT
     * les ResourceBundle du JDK
@@ -50,7 +50,8 @@ Pre-requis:
     * Idée 1 : des tests JUnit pour l'orthographe
     * Idée 2 : un JSR pour les ResourceBundle 2.0
 
-4. Traduction via Excel & Crowd Sourcing: 15m (dimitri)
+Traduction via Excel & Crowd Sourcing: 15min (dimitri)
+----------------------------------------------------
 
-
-5. QA : 15min
+QA : 15min
+----------
