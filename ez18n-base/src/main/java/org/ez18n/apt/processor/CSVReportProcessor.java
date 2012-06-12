@@ -112,6 +112,7 @@ public final class CSVReportProcessor extends AbstractProcessor {
                 }
             }
             writer.close();
+            processingEnv.getMessager().printMessage(Kind.NOTE, "written " + file.toUri());
         } catch (FilerException e) {
             return false;
         } catch (IOException e) {
