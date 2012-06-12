@@ -23,3 +23,4 @@ ez18n-webapp/gwt-unitCache
 ez18n-webapp/war/WEB-INF/classes
 ez18n-webapp/war/stockwatcher
 ez18n-webapp/war/WEB-INF/deploy/
+ez18n-slides/uml/*.mdxml.bak
