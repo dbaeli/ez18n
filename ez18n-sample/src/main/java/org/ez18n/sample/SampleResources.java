@@ -1,4 +1,4 @@
-﻿package org.ez18n.sample;
+package org.ez18n.sample;
 
 import org.ez18n.apt.Label;
 import org.ez18n.apt.LabelBundle;
