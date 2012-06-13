@@ -7,10 +7,9 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.Locale;
-import java.util.Properties;
-import java.util.PropertyResourceBundle;
-import java.util.ResourceBundle;
+import java.text.ChoiceFormat;
+import java.text.MessageFormat;
+import java.util.*;
 
 /**
  */
@@ -34,6 +33,29 @@ public class OldFashionSample {
     System.out.println("IT : " + bundle_it.getString("helloWorld"));
 
     //testResourceBundleReload();
+    messageFormatSamples();
+
+  }
+
+  public static void messageFormatSamples() {
+    //Samples from MessageFormat
+
+    int planet = 7;
+    String event = "a disturbance in the Force";
+    final Date date = new Date();
+
+    final String pattern = "At {1,time} on {1,date}, there was {2} on planet {0,number,integer}.";
+    String result = MessageFormat.format(pattern, planet, date, event);
+    System.out.println("Formatted message : " + result);
+
+
+    String message = "The disk \"{0}\" contains {1,choice,0# no files|1# one file|1< {1,number,integer} files}";
+    System.out.println("Formatted message : " + MessageFormat.format(message, "disk0", 0));
+    System.out.println("Formatted message : " + MessageFormat.format(message, "disk1", 1));
+    System.out.println("Formatted message : " + MessageFormat.format(message, "disk2", 120));
+
+    //See java.util.Formatter
+    System.out.printf("Using printf : %s, %2$te-%2$tm-%2$tY, %3$s\n", planet, date, event);
 
   }
 
