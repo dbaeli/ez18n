@@ -4,7 +4,7 @@ ez18n
 apt: 30min (gilles)
 -------------------
 
-(https://github.com/dbaeli/ez18n/blob/master/ez18n-slides/apt_in_nutshell.pptx?raw=true "apt_in_nutshell.pptx")
+[apt_in_nutshell.pptx](https://github.com/dbaeli/ez18n/blob/master/ez18n-slides/apt_in_nutshell.pptx?raw=true "apt_in_nutshell.pptx")
 
 * APT qu'est ce que c'est
 * appeler en ligne de commande
@@ -34,7 +34,7 @@ Gouvernance: i18n, l10n: 30min (dimitri)
 Pattern APT, plugin maven, gwt:  45min (gilles)
 -----------------------------------------------
 
-(https://github.com/dbaeli/ez18n/blob/master/ez18n-slides/apt_in_nutshell.pptx?raw=true "apt_in_nutshell.pptx")
+[ez18n_hands_on.pptx](https://github.com/dbaeli/ez18n/blob/master/ez18n-slides/ez18n_hands_on.pptx?raw=true "ez18n_hands_on.pptx")
 
 * Introduction à i18n avec GWT
 * les ResourceBundle du JDK
