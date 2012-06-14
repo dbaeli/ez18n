@@ -22,14 +22,29 @@ apt: 30min (gilles)
 * compilation une ou deux passes ?
 * APT dans mon IDE
 
-encoding: 15min (dimitri)
--------------------------
+encoding et gouvernance : i18n, l10n: 30min (dimitri)
+-----------------------------------------------------
 
-Gouvernance: i18n, l10n: 30min (dimitri)
----------------------------------------
+[ez18n_theorie.pptx](https://github.com/dbaeli/ez18n/blob/master/ez18n-slides/ez18n_theorie.pptx?raw=true "ez18n_theorie.pptx")
+
+* ISO-8859-1 Au secours !
+* Téléphone japonais
+* Gruyère international
+* i18n ?
+* i18n ou l10n
+* Le champ d'action
+* Pour le fun: les guillemets
+* i18n en java
+* MessageFormat
+* Démo : Old style i18n
+* Exemples
+* The absolute minimum
+* Le minimum
+* Encodings
+* Idées au passage
+* Des outils
 
 [pause]
-
 
 Pattern APT, plugin maven, gwt:  45min (gilles)
 -----------------------------------------------
@@ -55,7 +70,18 @@ Pattern APT, plugin maven, gwt:  45min (gilles)
 * Idée 2 : un JSR pour les ResourceBundle 2.0
 
 Traduction via Excel & Crowd Sourcing: 15min (dimitri)
-----------------------------------------------------
+------------------------------------------------------
+
+[ez18n_crowdsourcing.pptx](https://github.com/dbaeli/ez18n/blob/master/ez18n-slides/ez18n_crowdsourcing.pptx?raw=true "ez18n_crowdsourcing.pptx")
+
+* Besoin de gouvernance
+* Externaliser l'internalisation !
+* Vraiment pas satisfaisant
+* Not Invented Here (NIH)
+* Et arrive le crowd sourcing
+* Babili Crowdin.net
+* Aides à la traduction
+* Le sommet de l'iceberg
 
 QA : 15min
 ----------
