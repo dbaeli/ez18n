@@ -4,9 +4,9 @@ ez18n
 apt: 30min (gilles)
 -------------------
 
-[apt_in_nutshell.pptx](ez18n-slides/ez18n_apt_in_nutshell.pptx?raw=true "apt_in_nutshell.pptx")
+[ez18n_apt_in_nutshell.pptx](ez18n-slides/ez18n_apt_in_nutshell.pptx?raw=true "ez18n_apt_in_nutshell.pptx")
 
-[apt_in_nutshell.pdf](ez18n-slides/ez18n_apt_in_nutshell.pdf?raw=true "apt_in_nutshell.pdf")
+[ez18n_apt_in_nutshell.pdf](ez18n-slides/ez18n_apt_in_nutshell.pdf?raw=true "ez18n_apt_in_nutshell.pdf")
 
 
 * APT qu'est ce que c'est
