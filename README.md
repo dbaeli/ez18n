@@ -5,6 +5,8 @@ apt: 30min (gilles)
 -------------------
 
 [apt_in_nutshell.pptx](https://github.com/dbaeli/ez18n/blob/master/ez18n-slides/apt_in_nutshell.pptx?raw=true "apt_in_nutshell.pptx")
+[apt_in_nutshell.pdf](https://github.com/dbaeli/ez18n/blob/master/ez18n-slides/apt_in_nutshell.pdf?raw=true "apt_in_nutshell.pdf")
+
 
 * APT qu'est ce que c'est
 * appeler en ligne de commande
@@ -26,6 +28,7 @@ encoding et gouvernance : i18n, l10n: 30min (dimitri)
 -----------------------------------------------------
 
 [ez18n_theorie.pptx](https://github.com/dbaeli/ez18n/blob/master/ez18n-slides/ez18n_theorie.pptx?raw=true "ez18n_theorie.pptx")
+[ez18n_theorie.pdf](https://github.com/dbaeli/ez18n/blob/master/ez18n-slides/ez18n_theorie.pdf?raw=true "ez18n_theorie.pdf")
 
 * ISO-8859-1 Au secours !
 * Téléphone japonais
@@ -50,6 +53,7 @@ Pattern APT, plugin maven, gwt:  45min (gilles)
 -----------------------------------------------
 
 [ez18n_hands_on.pptx](https://github.com/dbaeli/ez18n/blob/master/ez18n-slides/ez18n_hands_on.pptx?raw=true "ez18n_hands_on.pptx")
+[ez18n_hands_on.pdf](https://github.com/dbaeli/ez18n/blob/master/ez18n-slides/ez18n_hands_on.pdf?raw=true "ez18n_hands_on.pdf")
 
 * Introduction à i18n avec GWT
 * les ResourceBundle du JDK
@@ -73,6 +77,7 @@ Traduction via Excel & Crowd Sourcing: 15min (dimitri)
 ------------------------------------------------------
 
 [ez18n_crowdsourcing.pptx](https://github.com/dbaeli/ez18n/blob/master/ez18n-slides/ez18n_crowdsourcing.pptx?raw=true "ez18n_crowdsourcing.pptx")
+[ez18n_crowdsourcing.pdf](https://github.com/dbaeli/ez18n/blob/master/ez18n-slides/ez18n_crowdsourcing.pdf?raw=true "ez18n_crowdsourcing.pdf")
 
 * Besoin de gouvernance
 * Externaliser l'internalisation !
