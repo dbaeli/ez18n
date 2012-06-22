@@ -14,6 +14,7 @@ package org.ez18n.apt.processor;
 
 import static javax.lang.model.SourceVersion.RELEASE_6;
 import static javax.tools.StandardLocation.CLASS_OUTPUT;
+import static javax.tools.StandardLocation.SOURCE_OUTPUT;
 
 import java.io.IOException;
 import java.io.Writer;
@@ -94,7 +95,7 @@ public final class CSVReportProcessor extends AbstractProcessor {
         }
 
         try {
-            final FileObject file = processingEnv.getFiler().createResource(CLASS_OUTPUT, "", "i18n_report.csv");
+            final FileObject file = processingEnv.getFiler().createResource(SOURCE_OUTPUT, "", "i18n_report.csv");
             final Writer writer = file.openWriter();
             for (TypeElement bundleType : labelBundles.keySet()) {
                 for (LabelTemplateMethod templateMethod : labelBundles.get(bundleType)) {
@@ -112,6 +113,7 @@ public final class CSVReportProcessor extends AbstractProcessor {
                 }
             }
             writer.close();
+            processingEnv.getMessager().printMessage(Kind.NOTE, "written " + file.toUri());
         } catch (FilerException e) {
             return false;
         } catch (IOException e) {
