@@ -1,6 +1,6 @@
 Title:
 
-Mr Apt loves you ! And a i18n survivor guide
+i18n survivor guide and a smart use of the Annotation Processing
 
 Summary:
 
