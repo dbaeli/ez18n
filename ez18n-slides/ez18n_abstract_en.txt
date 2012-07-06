@@ -1,9 +1,11 @@
 Title:
 
-i18n survivor guide and a smart use of the Annotation Processing
-(Or Dear i18n, mr APT loves you !)
+Dear i18n, mr APT loves you !
 
 Summary:
+********
+
+A i18n survivor guide and a smart use of the Annotation Processing.
 
 Based on some real life stories and best practices collected while coding java applications we have the following stories for you :
 
