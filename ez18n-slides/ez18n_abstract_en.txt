@@ -1,8 +1,11 @@
-Dear i18n, apt loves you !
-* APT Processing survivor guide
-* Kill the encoding hell
-* Crowdsourcing
-* Smart i18n
+Mr Apt loves you ! And an i18n survivor guide
+
+Based on some real life stories and best practices collected while coding java applications we have the following stories for you :
+* Mr Apt loves you ! (APT Processing survivor guide) : When and how to use the APT tooling, a smart code generator built-in in the JDK.
+* Tango Charly i18n (i18n and encoding survivor guide) : Critical information to know about i18n and encoding hell.
+* I18n swiss knife (the ez18n project) : an annotation set to forget ".properties" files for the rest of your life, with a sample on how to enable multi-device localisation (desktop/mobile for en).
+* massive i18n (Crowdsourcing) : how to easily receive high quality contributions from your users. 
+
 
 
 Title:
