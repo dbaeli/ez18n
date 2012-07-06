@@ -1,4 +1,8 @@
+Title:
+
 Mr Apt loves you ! And an i18n survivor guide
+
+Summary:
 
 Based on some real life stories and best practices collected while coding java applications we have the following stories for you :
 * Mr Apt loves you ! (APT Processing survivor guide) : When and how to use the APT tooling, a smart code generator built-in in the JDK.
@@ -6,43 +10,3 @@ Based on some real life stories and best practices collected while coding java a
 * I18n swiss knife (the ez18n project) : an annotation set to forget ".properties" files for the rest of your life, with a sample on how to enable multi-device localisation (desktop/mobile for en).
 * massive i18n (Crowdsourcing) : how to easily receive high quality contributions from your users. 
 
-
-
-Title:
-
-I18N mon amour et Annotation Processing par l'exemple
-
-Summary:
-
-Nous allons vous raconter l'histoire d'une reprise en main de la localisation Java depuis le code source gr�ce � l'utilisation d'annotations et leur ami Mr Processeur � chaque chapitre.
-
-Chapitre 1: Maman j'ai rat� l'avion i18n
-* L'histoire classique de la localisation a post�riori d'une application. Mais avec l'introduction d'une annotation pour g�rer les clefs et la langue de r�f�rence dans le code.
-
-Chapitre 2: Mais o� est I18n-Charlie ?
-* Comment s'assurer que tout est localis� et que toutes les clefs sont utiles, g�n�rer un fichier excel pour revue.
-
-Chapitre 3: GWT mon amour
-* Comment partager les ressources texte simultan�ment dans GWT et J2EE
-
-Chapitre 4: Mobile Me
-* Coexistence d'une version web classique et web mobile (libell�s simplifi�s sur un petit �cran), avec le 'deferred binding' de GWT.
-
-Chapitre Bonus: i18n for ever
-* La localisation de masse  (crowd sourcing) avec par exemple crowdin.net
-
-Cette session se veut technique et ludique c�t� code et d�monstrations.
-
-
-Speaker bio:
-
-Dimitri BAELI (Datox, Almonde, PrimaSolution, eXo Platform, Courtanet) baigne dans l'univers Java depuis plus de 10 ans, sa passion pour les usines logicielles, l'organisation des d�veloppements, et les m�thodes agiles ne l'emp�che pas de mettre les mains dans le cambouis et d�velopper des outils utiles aux d�veloppeurs.
-
-* Introduction � Scrum 2010 : Vannes, NormandyJUG
-* REX Agilit� chez eXo 2010 : Rennes, Kiev (Agileee)
-* Productivit� des d�veloppements : Nantes 2010, Lille 2008
-* Dojo TDD 2010/11: NormandyJUG, Agile Tour Marseilles, NantesJUG
-
-Co-Cr�ation du � Normandy Agile User Group � en 2010, pour l'organisation de conf�rences et soir�es sur le th�me de l'agilit�. Agile Tour Rouen 2010 & 2011 : 100 personnes autour de l'agilit� � Rouen, 10+ intervenants.
-
-Gilles travaille depuis plus de 10 ans pour diff�rents �diteurs de logiciels (ILOG, PrimaSolution, Courtanet) sur des sujets tr�s vari�s: librairie graphique 2D, moteur de r�gles, plate-forme de services pour J2EE, code g�n�ration de mod�le m�tier. Actuellement, il est architecte pour le site Assuremieux.com (comparateur d'assurances), et aime aussi prendre l'air de temps en temps � San Francisco ou � Anvers.
