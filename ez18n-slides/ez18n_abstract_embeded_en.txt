@@ -1,12 +1,20 @@
-A i18n survivor guide and a smart use of the Annotation Processing.
+Multiple devices display survivor guide and a smart use of the Annotation Processing.
 
 Based on some real life stories and best practices collected while coding java applications we have the following stories for you :
+
 Story 1: Mr Apt loves you !  APT Processing explained
 * When and how to use the APT tooling, a smart code generator built-in in the JDK.
-Story 2: Tango Charly i18n : i18n and encoding survivor guide
-* Critical information to know about i18n and encoding hell.
-* Some ideas some manage mass i18n management (Crowdsourcing) : how to easily receive high quality contributions from your users. 
-Story 3: I18n swiss knife : the ez18n project
-* an annotation toolset to forget ".properties" files for the rest of your life, with a sample on how to enable multi-device localisation (desktop/mobile for en).
 
-All this to show you how i18n management can lead to fun situations and some interesting tooling, and why not more business for all.
+Story 2: Tango Charly i18n : i18n and encoding survivor guide
+* Critical information to know about i18n and encoding hell
+* Some ideas some manage mass i18n management (Crowdsourcing) : how to easily receive high quality contributions from your users. 
+
+Story 3: I18n swiss knife : the ez18n project
+* how to enable multi-device localisation (desktop/mobile for en)
+* Use an annotation toolset to forget ".properties" files for the rest of your life
+
+Chapitre 4: Mobile Me
+* Coexistence d'une version web classique et web mobile (libellés simplifiés sur un petit écran), avec le 'deferred binding' de GWT.
+
+Chapitre Bonus: i18n for ever
+* La localisation de masse  (crowd sourcing) avec par exemple crowdin.net
