@@ -1,13 +1,18 @@
 package org.ez18n.sample;
 
 public class PostCard {
-    private final SampleResources resources;
 
-    public PostCard(SampleResources resources) {
-        this.resources = resources;
-    }
-    
-    public String getText() {
-        return resources.loveMeTender();
-    }
+  private final Messages messages;
+
+  public PostCard(Messages resources) {
+    this.messages = resources;
+  }
+
+  public String getText() {
+    return messages.loveMeTender();
+  }
+
+  public String getLoveText(String name) {
+    return messages.doYouLove(name);
+  }
 }
