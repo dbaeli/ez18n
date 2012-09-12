@@ -54,7 +54,6 @@ public abstract class TestBundleProcessor extends LabelBundleProcessor {
 		conf.put("target.class.name", getTargetSimpleName(bundleType));
 		conf.put("package.name", bundleType.getEnclosingElement().toString());
 		conf.put("methods.code", methodsCode.toString());
-		conf.put("bundle.class.name", bundleType.getSimpleName().toString());
 		conf.put("annotation.class.name", getAnnotation().getName());
 		try {
 			code = replaceProperties(template, conf, NO_VALUE);
@@ -103,6 +102,7 @@ public abstract class TestBundleProcessor extends LabelBundleProcessor {
 		conf.put("method.name", method.getName());
 		conf.put("input.params", StringUtils.join(params, ","));
 		conf.put("bundle.class.name", getBundleClassName(bundleType, false));
+		conf.put("bundle.inject.class.name", bundleType.getSimpleName().toString());
 		conf.put("annotation", getAnnotation().getSimpleName());
 		try {
 			code = replaceProperties(methodTemplate, conf, NO_VALUE);

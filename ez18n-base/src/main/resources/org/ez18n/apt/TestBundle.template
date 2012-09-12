@@ -1,5 +1,6 @@
 package ${package.name};
 
+import static org.ez18n.runtime.MessageBundleFactory.getBundle;
 import static org.junit.Assert.assertNotNull;
 
 import java.lang.annotation.Annotation;
@@ -11,12 +12,4 @@ public class ${target.class.name} {
 
 ${methods.code}
 
-	private ${bundle.class.name} getBundle(Class<? extends Annotation> annotation) {
-		final ServiceLoader<${bundle.class.name}> loader = ServiceLoader.<${bundle.class.name}> load(${bundle.class.name}.class);
-		for (${bundle.class.name} bundle : loader) {
-			if(bundle.getClass().getAnnotation(annotation) != null)
-				return bundle;
-		}
-		throw new IllegalStateException("bundle not found");
-	}
 }

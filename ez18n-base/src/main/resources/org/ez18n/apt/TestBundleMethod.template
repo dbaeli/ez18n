@@ -1,5 +1,5 @@
 
     @org.junit.Test
     public void ${method.name}() {
-    	assertNotNull(getBundle(${annotation}.class).${method.name}(${input.params}));
+    	assertNotNull(getBundle(${bundle.inject.class.name}.class, ${annotation}.class).${method.name}(${input.params}));
     }
