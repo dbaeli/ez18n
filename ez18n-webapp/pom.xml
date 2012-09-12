@@ -31,6 +31,11 @@
       <artifactId>gwt-dev</artifactId>
       <scope>provided</scope>
     </dependency>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <scope>compile</scope>
+    </dependency>
   </dependencies>
   <build>
     <finalName>ez18n</finalName>
@@ -50,6 +55,7 @@
           <include>**/**.java</include>
           <include>**/*.gwt.xml</include>
           <include>**/*.properties</include>
+          <include>META-INF/services/*</include>
         </includes>
       </resource>
     </resources>

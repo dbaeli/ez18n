@@ -31,9 +31,9 @@
 
 
   <source path='client'>
-    <exclude name="**SiteBundle.java" />
+    <exclude name="**DesktopBundle.java" />
     <exclude name="**MobileBundle.java" />
-    <exclude name="**SiteBundleTest.java" />
+    <exclude name="**DesktopBundleTest.java" />
     <exclude name="**MobileBundleTest.java" />
     <exclude name="**Bundle**Factory.java" />
   </source>
