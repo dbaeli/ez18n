@@ -12,9 +12,9 @@
   <name>ez18n-webapp</name>
   <packaging>war</packaging>
   <dependencies>
-    <dependency>
+     <dependency>
       <groupId>org.ez18n</groupId>
-      <artifactId>ez18n-sample</artifactId>
+      <artifactId>ez18n-base</artifactId>
     </dependency>
     <dependency>
       <groupId>javax.servlet</groupId>
