@@ -13,7 +13,6 @@
 package org.ez18n.apt.processor;
 
 import static javax.lang.model.SourceVersion.RELEASE_6;
-import static javax.tools.StandardLocation.CLASS_OUTPUT;
 import static javax.tools.StandardLocation.SOURCE_OUTPUT;
 
 import java.io.IOException;
@@ -39,13 +38,13 @@ import javax.lang.model.element.VariableElement;
 import javax.tools.Diagnostic.Kind;
 import javax.tools.FileObject;
 
-import org.ez18n.apt.Label;
-import org.ez18n.apt.LabelBundle;
+import org.ez18n.Message;
+import org.ez18n.MessageBundle;
 import org.ez18n.apt.LabelTemplateMethod;
 import org.ez18n.apt.base.TemplateAnnotation;
 import org.ez18n.apt.base.TemplateParam;
 
-@SupportedAnnotationTypes(value = "org.ez18n.apt.LabelBundle")
+@SupportedAnnotationTypes(value = "org.ez18n.MessageBundle")
 @SupportedSourceVersion(RELEASE_6)
 public final class CSVReportProcessor extends AbstractProcessor {
 
@@ -54,7 +53,7 @@ public final class CSVReportProcessor extends AbstractProcessor {
         if (roundEnv.processingOver())
             return true;
         final Map<TypeElement, List<LabelTemplateMethod>> labelBundles = new HashMap<TypeElement, List<LabelTemplateMethod>>();
-        for (Element element : roundEnv.getElementsAnnotatedWith(LabelBundle.class)) {
+        for (Element element : roundEnv.getElementsAnnotatedWith(MessageBundle.class)) {
             if (element.getKind() != ElementKind.INTERFACE)
                 continue;
             final TypeElement bundleType = (TypeElement) element;
@@ -63,7 +62,7 @@ public final class CSVReportProcessor extends AbstractProcessor {
                 if (enclosedElement.getKind() != ElementKind.METHOD)
                     continue;
                 final ExecutableElement method = (ExecutableElement) enclosedElement;
-                Label labelAnnotation = enclosedElement.getAnnotation(Label.class);
+                Message labelAnnotation = enclosedElement.getAnnotation(Message.class);
                 final TemplateParam returnType = new TemplateParam(method.getReturnType().toString());
                 final boolean deprecated = method.getAnnotation(Deprecated.class) != null;
                 final LabelTemplateMethod labelMethod;

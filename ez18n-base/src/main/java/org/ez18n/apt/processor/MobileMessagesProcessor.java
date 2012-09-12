@@ -30,9 +30,10 @@ import javax.annotation.processing.SupportedSourceVersion;
 import javax.lang.model.element.TypeElement;
 
 import org.ez18n.apt.LabelTemplateMethod;
+import org.ez18n.apt.TemplateLoader;
 import org.ez18n.apt.macro.PropertyParsingException;
 
-@SupportedAnnotationTypes(value = "org.ez18n.apt.LabelBundle")
+@SupportedAnnotationTypes(value = "org.ez18n.MessageBundle")
 @SupportedSourceVersion(RELEASE_6)
 public final class MobileMessagesProcessor extends LabelBundleProcessor {
     private final String template;
@@ -40,8 +41,8 @@ public final class MobileMessagesProcessor extends LabelBundleProcessor {
 
     public MobileMessagesProcessor() {
         try {
-            template = load("MobileMessages.template");
-            method_template = load("DefaultMessageMethod.template");
+            template = TemplateLoader.load("MobileMessages.template");
+            method_template = TemplateLoader.load("DefaultMessageMethod.template");
         } catch (IOException e) {
             throw new IllegalStateException(e);
         }

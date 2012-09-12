@@ -15,8 +15,8 @@ package org.ez18n.apt.processor;
 import static java.text.DateFormat.SHORT;
 import static javax.lang.model.SourceVersion.RELEASE_6;
 import static org.ez18n.apt.macro.MacroProcessor.replaceProperties;
+import static org.ez18n.apt.processor.DesktopMessagesProcessor.getDesktopMessagesClassName;
 import static org.ez18n.apt.processor.MobileMessagesProcessor.getMobileMessagesClassName;
-import static org.ez18n.apt.processor.SiteMessagesProcessor.getSiteMessagesClassName;
 
 import java.io.IOException;
 import java.text.DateFormat;
@@ -30,16 +30,17 @@ import javax.annotation.processing.SupportedSourceVersion;
 import javax.lang.model.element.TypeElement;
 
 import org.ez18n.apt.LabelTemplateMethod;
+import org.ez18n.apt.TemplateLoader;
 import org.ez18n.apt.macro.PropertyParsingException;
 
-@SupportedAnnotationTypes(value = "org.ez18n.apt.LabelBundle")
+@SupportedAnnotationTypes(value = "org.ez18n.MessageBundle")
 @SupportedSourceVersion(RELEASE_6)
 public final class MessagesFactoryProcessor extends LabelBundleProcessor {
     private final String template;
 
     public MessagesFactoryProcessor() {
         try {
-            template = load("MessagesFactory.template");
+            template = TemplateLoader.load("MessagesFactory.template");
         } catch (IOException e) {
             throw new IllegalStateException(e);
         }
@@ -67,7 +68,7 @@ public final class MessagesFactoryProcessor extends LabelBundleProcessor {
         conf.put("target.class.name", getTargetSimpleName(bundleType));
         conf.put("source.class.name", bundleType.getSimpleName().toString());
         conf.put("package.name", bundleType.getEnclosingElement().toString());
-        conf.put("site.messages.class.name", getSiteMessagesClassName(bundleType, true));
+        conf.put("desktop.messages.class.name", getDesktopMessagesClassName(bundleType, true));
         conf.put("mobile.messages.class.name", getMobileMessagesClassName(bundleType, true));
         try {
             code = replaceProperties(template, conf, NO_VALUE);

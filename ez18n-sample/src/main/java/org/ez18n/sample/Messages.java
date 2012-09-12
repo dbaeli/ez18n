@@ -1,15 +1,15 @@
 package org.ez18n.sample;
 
-import org.ez18n.apt.Label;
-import org.ez18n.apt.LabelBundle;
+import org.ez18n.Message;
+import org.ez18n.MessageBundle;
 
-@LabelBundle
+@MessageBundle
 public interface Messages {
 
-  @Label("Love Me Tender")
+  @Message("Love Me Tender")
   String loveMeTender();
 
-  @Label("I love {0}")
+  @Message("I love {0}")
   String doYouLove(String name);
 
 }

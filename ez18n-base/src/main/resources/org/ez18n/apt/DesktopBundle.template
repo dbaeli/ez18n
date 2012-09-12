@@ -3,13 +3,14 @@ package ${package.name};
 import javax.annotation.Generated;
 import java.util.ResourceBundle;
 
-@Generated(value = "${process.class}",  date = "${process.date}")
-public enum ${target.class.name} implements ${source.class.name} {
-    MSG_${source.class.name.camel};
+import org.ez18n.runtime.Desktop;
 
+@Desktop
+@Generated(value = "${process.class}",  date = "${process.date}")
+public final class ${target.class.name} implements ${source.class.name} {
     private final ResourceBundle delegate;
 
-    ${target.class.name}() {
+    public ${target.class.name}() {
         delegate = ResourceBundle.getBundle("${package.name}.${bundle.property.file}");
     }
 

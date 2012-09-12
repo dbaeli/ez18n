@@ -10,21 +10,27 @@
  * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the
  * specific language governing permissions and limitations under the License.
  */
-package org.ez18n.apt;
+package org.ez18n.apt.processor;
 
-import java.lang.annotation.ElementType;
-import java.lang.annotation.Retention;
-import java.lang.annotation.RetentionPolicy;
-import java.lang.annotation.Target;
+import static javax.lang.model.SourceVersion.RELEASE_6;
 
-@Retention(RetentionPolicy.SOURCE)
-@Target(ElementType.METHOD)
-public @interface Label {
+import javax.annotation.processing.SupportedAnnotationTypes;
+import javax.annotation.processing.SupportedSourceVersion;
 
-    String BASE_MESSAGE = "###base_message###";
+import org.ez18n.apt.LabelTemplateMethod;
 
-    String value();
+@SupportedAnnotationTypes(value = "org.ez18n.MessageBundle")
+@SupportedSourceVersion(RELEASE_6)
+public final class DesktopBundlePropertiesProcessor extends BundlePropertiesProcessor {
 
-    String mobile() default BASE_MESSAGE;
+    @Override
+    protected String getPrefix() {
+        return "Desktop";
+    }
+
+    @Override
+    protected String getPropertyValue(LabelTemplateMethod method) {
+        return method.getBase();
+    }
 
 }

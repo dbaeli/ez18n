@@ -5,7 +5,7 @@ import com.google.gwt.core.client.GWT;
 
 @Generated(value = "${process.class}",  date = "${process.date}")
 public class ${target.class.name} {
-    private static final ${source.class.name} LABELS = ((LabelFactory) GWT.create(SiteLabelFactory.class))
+    private static final ${source.class.name} LABELS = ((LabelFactory) GWT.create(DesktopLabelFactory.class))
                     .getLabels();
 
     public static ${source.class.name} MSG_${source.class.name.camel}() {
@@ -16,10 +16,10 @@ public class ${target.class.name} {
         ${source.class.name} getLabels();
     }
 
-    private static class SiteLabelFactory implements LabelFactory {
+    private static class DesktopLabelFactory implements LabelFactory {
         @Override
         public ${source.class.name} getLabels() {
-            return GWT.create(${site.messages.class.name}.class);
+            return GWT.create(${desktop.messages.class.name}.class);
         }
     }
 

@@ -14,6 +14,7 @@ package org.ez18n.apt.processor;
 
 import static java.text.DateFormat.SHORT;
 import static javax.lang.model.SourceVersion.RELEASE_6;
+import static org.apache.commons.lang3.StringEscapeUtils.escapeJava;
 import static org.ez18n.apt.base.TemplateMethod.trimJavaDotLangDot;
 import static org.ez18n.apt.macro.MacroProcessor.replaceProperties;
 
@@ -29,20 +30,19 @@ import javax.annotation.processing.SupportedSourceVersion;
 import javax.lang.model.element.TypeElement;
 
 import org.ez18n.apt.LabelTemplateMethod;
+import org.ez18n.apt.TemplateLoader;
 import org.ez18n.apt.macro.PropertyParsingException;
 
-@SupportedAnnotationTypes(value = "org.ez18n.apt.LabelBundle")
+@SupportedAnnotationTypes(value = "org.ez18n.MessageBundle")
 @SupportedSourceVersion(RELEASE_6)
-public final class SiteBundleProcessor extends LabelBundleProcessor {
+public final class DesktopMessagesProcessor extends LabelBundleProcessor {
     private final String template;
-    private final String no_param_method_template;
-    private final String multi_param_method_template;
+    private final String method_template;
 
-    public SiteBundleProcessor() {
+    public DesktopMessagesProcessor() {
         try {
-            template = load("SiteBundle.template");
-            no_param_method_template = load("NoParamBundleMethod.template");
-            multi_param_method_template = load("MultiParamBundleMethod.template");
+            template = TemplateLoader.load("DesktopMessages.template");
+            method_template = TemplateLoader.load("DefaultMessageMethod.template");
         } catch (IOException e) {
             throw new IllegalStateException(e);
         }
@@ -50,32 +50,31 @@ public final class SiteBundleProcessor extends LabelBundleProcessor {
 
     @Override
     protected String getTargetSimpleName(TypeElement typeElement) {
-        return getSiteBundleClassName(typeElement, false);
+        return getDesktopMessagesClassName(typeElement, false);
     }
 
-    static final String getSiteBundleClassName(TypeElement typeElement, boolean fqcn) {
+    static final String getDesktopMessagesClassName(TypeElement typeElement, boolean fqcn) {
         final String simpleName = typeElement.getSimpleName().toString();
         final int resourceIndex = simpleName.indexOf("Resources");
         final String shortName = resourceIndex > 0 ? simpleName.substring(0, resourceIndex) : simpleName;
-        return (fqcn ? typeElement.getEnclosingElement().toString() + "." : "") + "E" + shortName + "SiteBundle";
+        return (fqcn ? typeElement.getEnclosingElement().toString() + "." : "") + shortName + "DesktopMessages";
     }
 
     @Override
     protected String getCode(TypeElement bundleType, List<LabelTemplateMethod> methods) {
         final StringBuffer methodsCode = new StringBuffer();
-        for (LabelTemplateMethod method : methods)
+        for (LabelTemplateMethod method : methods) {
             methodsCode.append(getCode(bundleType, method));
+        }
 
         final String code;
         final Map<String, String> conf = new HashMap<String, String>();
         conf.put("process.class", getClass().getName());
         conf.put("process.date", DateFormat.getDateTimeInstance(SHORT, SHORT).format(new Date()));
-        conf.put("source.class.name.camel", toCamelCase(bundleType));
         conf.put("target.class.name", getTargetSimpleName(bundleType));
         conf.put("source.class.name", bundleType.getSimpleName().toString());
         conf.put("package.name", bundleType.getEnclosingElement().toString());
         conf.put("methods.code", methodsCode.toString());
-        conf.put("bundle.property.file", "Site" + bundleType.getSimpleName().toString());
         try {
             code = replaceProperties(template, conf, NO_VALUE);
         } catch (PropertyParsingException e) {
@@ -90,12 +89,9 @@ public final class SiteBundleProcessor extends LabelBundleProcessor {
         final String code;
         final Map<String, String> conf = new HashMap<String, String>();
         conf.put("return.type", trimJavaDotLangDot(method.getReturnParam().getType()));
-        conf.put("default.message", method.getMobile(true));
+        conf.put("default.message", escapeJava(method.getBase()));
         conf.put("method.name", method.getName());
-        conf.put("input.params", method.formatParamsName(false));
-        conf.put("input.typed.params", method.formatParamsTypeAndName(false));
-        final String method_template = method.getParams().isEmpty() ? no_param_method_template
-                        : multi_param_method_template;
+        conf.put("input.typed.params", method.formatParamsTypeAndNameAndAnnotations(false));
         try {
             code = replaceProperties(method_template, conf, NO_VALUE);
         } catch (PropertyParsingException e) {

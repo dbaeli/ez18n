@@ -34,14 +34,14 @@ import org.ez18n.apt.macro.PropertyParsingException;
 
 @SupportedAnnotationTypes(value = "org.ez18n.MessageBundle")
 @SupportedSourceVersion(RELEASE_6)
-public final class MobileBundleProcessor extends LabelBundleProcessor {
+public final class DesktopBundleProcessor extends LabelBundleProcessor {
 	private final String template;
 	private final String no_param_method_template;
 	private final String multi_param_method_template;
 
-	public MobileBundleProcessor() {
+	public DesktopBundleProcessor() {
 		try {
-			template = TemplateLoader.load("MobileBundle.template");
+			template = TemplateLoader.load("DesktopBundle.template");
 			no_param_method_template = TemplateLoader.load("NoParamBundleMethod.template");
 			multi_param_method_template = TemplateLoader.load("MultiParamBundleMethod.template");
 		} catch (IOException e) {
@@ -51,14 +51,14 @@ public final class MobileBundleProcessor extends LabelBundleProcessor {
 
 	@Override
 	protected String getTargetSimpleName(TypeElement typeElement) {
-		return getMobileMessagesClassName(typeElement, false);
+		return getDesktopBundleClassName(typeElement, false);
 	}
 
-	static final String getMobileMessagesClassName(TypeElement typeElement, boolean fqcn) {
+	static final String getDesktopBundleClassName(TypeElement typeElement, boolean fqcn) {
 		final String simpleName = typeElement.getSimpleName().toString();
 		final int resourceIndex = simpleName.indexOf("Resources");
 		final String shortName = resourceIndex > 0 ? simpleName.substring(0, resourceIndex) : simpleName;
-		return (fqcn ? typeElement.getEnclosingElement().toString() + "." : "") + shortName + "MobileBundle";
+		return (fqcn ? typeElement.getEnclosingElement().toString() + "." : "") + shortName + "DesktopBundle";
 	}
 
 	@Override
@@ -76,7 +76,7 @@ public final class MobileBundleProcessor extends LabelBundleProcessor {
 		conf.put("source.class.name", bundleType.getSimpleName().toString());
 		conf.put("package.name", bundleType.getEnclosingElement().toString());
 		conf.put("methods.code", methodsCode.toString());
-		conf.put("bundle.property.file", "Mobile" + bundleType.getSimpleName().toString());
+		conf.put("bundle.property.file", "Desktop" + bundleType.getSimpleName().toString());
 		try {
 			code = replaceProperties(template, conf, NO_VALUE);
 		} catch (PropertyParsingException e) {
@@ -104,5 +104,4 @@ public final class MobileBundleProcessor extends LabelBundleProcessor {
 		}
 		return code;
 	}
-
 }

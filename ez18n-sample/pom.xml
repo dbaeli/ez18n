@@ -38,6 +38,7 @@
           <include>**/**.java</include>
           <include>**/*.gwt.xml</include>
           <include>**/*.properties</include>
+          <include>META-INF/services/*</include>
         </includes>
       </resource>
     </resources>
@@ -75,9 +76,12 @@
               <compilerArguments>-encoding UTF-8</compilerArguments>
               <outputDirectory>${project.build.directory}/generated-sources/apt</outputDirectory>
               <processors>
-                <processor>org.ez18n.apt.processor.SiteBundleProcessor</processor>
-                <processor>org.ez18n.apt.processor.SiteBundlePropertiesProcessor</processor>
+                <processor>org.ez18n.apt.processor.MobileBundleProcessor</processor>
+                <processor>org.ez18n.apt.processor.MobileBundlePropertiesProcessor</processor>
+                <processor>org.ez18n.apt.processor.DesktopBundleProcessor</processor>
+                <processor>org.ez18n.apt.processor.DesktopBundlePropertiesProcessor</processor>
                 <processor>org.ez18n.apt.processor.CSVReportProcessor</processor>
+                <processor>org.ez18n.apt.processor.MetaInfServicesProcessor</processor>
               </processors>
             </configuration>
           </execution>
@@ -91,7 +95,8 @@
               <compilerArguments>-encoding UTF-8</compilerArguments>
               <outputDirectory>${project.build.directory}/generated-sources/apt-test</outputDirectory>
               <processors>
-                <processor>org.ez18n.apt.processor.TestSiteBundleProcessor</processor>
+                <processor>org.ez18n.apt.processor.TestDesktopBundleProcessor</processor>
+                <processor>org.ez18n.apt.processor.TestMobileBundleProcessor</processor>
               </processors>
               <sourceDirectory>${project.build.sourceDirectory}</sourceDirectory>
             </configuration>

@@ -10,27 +10,21 @@
  * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the
  * specific language governing permissions and limitations under the License.
  */
-package org.ez18n.apt.processor;
+package org.ez18n;
 
-import static javax.lang.model.SourceVersion.RELEASE_6;
+import java.lang.annotation.ElementType;
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
+import java.lang.annotation.Target;
 
-import javax.annotation.processing.SupportedAnnotationTypes;
-import javax.annotation.processing.SupportedSourceVersion;
+@Retention(RetentionPolicy.SOURCE)
+@Target(ElementType.METHOD)
+public @interface Message {
 
-import org.ez18n.apt.LabelTemplateMethod;
+    String BASE_MESSAGE = "###base_message###";
 
-@SupportedAnnotationTypes(value = "org.ez18n.apt.LabelBundle")
-@SupportedSourceVersion(RELEASE_6)
-public final class SiteBundlePropertiesProcessor extends BundlePropertiesProcessor {
+    String value();
 
-    @Override
-    protected String getPrefix() {
-        return "Site";
-    }
-
-    @Override
-    protected String getPropertyValue(LabelTemplateMethod method) {
-        return method.getBase();
-    }
+    String mobile() default BASE_MESSAGE;
 
 }

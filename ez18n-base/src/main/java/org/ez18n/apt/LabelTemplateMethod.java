@@ -12,6 +12,7 @@
  */
 package org.ez18n.apt;
 
+import org.ez18n.Message;
 import org.ez18n.apt.base.TemplateMethod;
 import org.ez18n.apt.base.TemplateParam;
 
@@ -36,7 +37,7 @@ public final class LabelTemplateMethod extends TemplateMethod {
 
     public String getMobile(boolean effective) {
         if (effective) {
-            return Label.BASE_MESSAGE.equals(mobile) ? base : mobile;
+            return Message.BASE_MESSAGE.equals(mobile) ? base : mobile;
         } else {
             return mobile;
         }

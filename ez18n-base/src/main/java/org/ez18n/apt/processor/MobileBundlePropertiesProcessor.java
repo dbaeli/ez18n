@@ -19,7 +19,7 @@ import javax.annotation.processing.SupportedSourceVersion;
 
 import org.ez18n.apt.LabelTemplateMethod;
 
-@SupportedAnnotationTypes(value = "org.ez18n.apt.LabelBundle")
+@SupportedAnnotationTypes(value = "org.ez18n.MessageBundle")
 @SupportedSourceVersion(RELEASE_6)
 public final class MobileBundlePropertiesProcessor extends BundlePropertiesProcessor {
 
