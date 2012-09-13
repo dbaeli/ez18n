@@ -10,6 +10,6 @@ public class MessageBundleFactory {
 			if (bundle.getClass().getAnnotation(annotation) != null)
 				return bundle;
 		}
-		throw new IllegalStateException("bundle not found");
+		throw new IllegalStateException("bundle not found for " + service.getName());
 	}
 }

@@ -12,7 +12,7 @@
   <name>ez18n-webapp</name>
   <packaging>war</packaging>
   <dependencies>
-     <dependency>
+    <dependency>
       <groupId>org.ez18n</groupId>
       <artifactId>ez18n-base</artifactId>
     </dependency>
@@ -30,6 +30,11 @@
       <groupId>com.google.gwt</groupId>
       <artifactId>gwt-dev</artifactId>
       <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <scope>test</scope>
     </dependency>
   </dependencies>
   <build>
@@ -50,9 +55,18 @@
           <include>**/**.java</include>
           <include>**/*.gwt.xml</include>
           <include>**/*.properties</include>
+          <include>META-INF/services/*</include>
         </includes>
       </resource>
     </resources>
+    <testResources>
+      <testResource>
+        <directory>${project.build.directory}/generated-sources/apt-test</directory>
+        <includes>
+          <include>**/**.java</include>
+        </includes>
+      </testResource>
+    </testResources>
     <plugins>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
@@ -62,25 +76,6 @@
           <webXml>${basedir}/war/WEB-INF/web.xml</webXml>
           <containerConfigXML>${basedir}/war/META-INF/context.xml</containerConfigXML>
         </configuration>
-      </plugin>
-      <plugin>
-        <groupId>org.codehaus.mojo</groupId>
-        <artifactId>build-helper-maven-plugin</artifactId>
-        <executions>
-          <execution>
-            <id>add-source</id>
-            <phase>generate-sources</phase>
-            <goals>
-              <goal>add-source</goal>
-            </goals>
-            <configuration>
-              <sources>
-                <source>target/generated-sources/apt</source>
-                <source>target/generated-sources/apt-test</source>
-              </sources>
-            </configuration>
-          </execution>
-        </executions>
       </plugin>
       <plugin>
         <groupId>org.bsc.maven</groupId>

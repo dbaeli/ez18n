@@ -41,6 +41,7 @@ import javax.tools.FileObject;
 import org.apache.commons.io.IOUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.ez18n.MessageBundle;
+import org.ez18n.apt.TemplateLoader;
 import org.ez18n.apt.macro.PropertyParsingException;
 
 @SupportedAnnotationTypes(value = "org.ez18n.MessageBundle")
@@ -51,15 +52,11 @@ public final class GwtXmlProcessor extends AbstractProcessor {
 
     public GwtXmlProcessor() {
         try {
-            template = load("GeneratedGwtXml.template");
-            fragment_template = load("GeneratedGwtXml.factory.template");
+            template = TemplateLoader.load("GeneratedGwtXml.template");
+            fragment_template = TemplateLoader.load("GeneratedGwtXml.factory.template");
         } catch (IOException e) {
             throw new IllegalStateException(e);
         }
-    }
-
-    private static final String load(String resource) throws IOException {
-        return IOUtils.toString(MessageBundle.class.getResourceAsStream(resource));
     }
 
     @Override
