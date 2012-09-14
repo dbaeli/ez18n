@@ -3,12 +3,15 @@
  */
 package org.ez18n.apt.processor;
 
+import static java.text.DateFormat.SHORT;
 import static org.apache.commons.lang3.StringUtils.isEmpty;
 import static org.ez18n.apt.macro.MacroProcessor.replaceProperties;
 
 import java.io.IOException;
 import java.lang.annotation.Annotation;
+import java.text.DateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -51,10 +54,14 @@ public abstract class TestBundleProcessor extends LabelBundleProcessor {
 
 		final String code;
 		final Map<String, String> conf = new HashMap<String, String>();
+        conf.put("process.class", getClass().getName());
+        conf.put("process.date", DateFormat.getDateTimeInstance(SHORT, SHORT).format(new Date()));
 		conf.put("target.class.name", getTargetSimpleName(bundleType));
 		conf.put("package.name", bundleType.getEnclosingElement().toString());
 		conf.put("methods.code", methodsCode.toString());
-		conf.put("annotation.class.name", getAnnotation().getName());
+		conf.put("annotation.qualified.class.name", getAnnotation().getName());
+		conf.put("annotation.simple.class.name", getAnnotation().getSimpleName());
+		conf.put("bundle.class.name", bundleType.getSimpleName().toString());
 		try {
 			code = replaceProperties(template, conf, NO_VALUE);
 		} catch (PropertyParsingException e) {
@@ -101,9 +108,6 @@ public abstract class TestBundleProcessor extends LabelBundleProcessor {
 		conf.put("source.class.name.camel", toCamelCase(bundleType));
 		conf.put("method.name", method.getName());
 		conf.put("input.params", StringUtils.join(params, ","));
-		conf.put("bundle.class.name", getBundleClassName(bundleType, false));
-		conf.put("bundle.inject.class.name", bundleType.getSimpleName().toString());
-		conf.put("annotation", getAnnotation().getSimpleName());
 		try {
 			code = replaceProperties(methodTemplate, conf, NO_VALUE);
 		} catch (PropertyParsingException e) {

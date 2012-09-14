@@ -3,12 +3,19 @@ package ${package.name};
 import static org.ez18n.runtime.MessageBundleFactory.getBundle;
 import static org.junit.Assert.assertNotNull;
 
-import java.lang.annotation.Annotation;
-import java.util.ServiceLoader;
+import javax.annotation.Generated;
 
-import ${annotation.class.name};
+import ${annotation.qualified.class.name};
 
+@Generated(value = "${process.class}",  date = "${process.date}")
 public class ${target.class.name} {
+
+	private ${bundle.class.name} bundle;
+
+	@org.junit.Before
+	public void setUp() {
+		bundle = getBundle(${bundle.class.name}.class, ${annotation.simple.class.name}.class);
+	}
 
 ${methods.code}
 
