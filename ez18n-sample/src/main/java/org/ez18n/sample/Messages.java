@@ -6,10 +6,11 @@ import org.ez18n.MessageBundle;
 @MessageBundle
 public interface Messages {
 
-  @Message("Love Me Tender")
-  String loveMeTender();
+	@Message(value = "Love Me Tender", //
+	mobile = "Love Me True")
+	String loveMeTender();
 
-  @Message("I love {0}")
-  String doYouLove(String name);
+	@Message("I love {0}")
+	String doYouLove(String name);
 
 }
