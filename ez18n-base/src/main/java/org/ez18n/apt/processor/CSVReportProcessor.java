@@ -103,11 +103,9 @@ public final class CSVReportProcessor extends AbstractProcessor {
                     writer.write("\";\"");
                     writer.write(templateMethod.getName());
                     writer.write("\";\"");
-                    writer.write(new MessageFormat(templateMethod.getBase()).format(new Object[] {})
-                                    .replace("\"", "''"));
+                    writer.write(new MessageFormat(templateMethod.getBase()).format(new Object[] {}).replace("\"", "''"));
                     writer.write("\";\"");
-                    writer.write(new MessageFormat(templateMethod.getMobile()).format(new Object[] {}).replace("\"",
-                                    "''"));
+                    writer.write(new MessageFormat(templateMethod.getMobile()).format(new Object[] {}).replace("\"", "''"));
                     writer.write("\"\n");
                 }
             }
