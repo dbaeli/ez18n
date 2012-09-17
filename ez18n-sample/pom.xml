@@ -44,7 +44,7 @@
     </resources>
     <testResources>
       <testResource>
-        <directory>${project.build.directory}/generated-sources/apt</directory>
+        <directory>${project.build.directory}/generated-sources/apt-test</directory>
         <includes>
           <include>**/**.java</include>
         </includes>
