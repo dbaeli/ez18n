@@ -111,7 +111,7 @@
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
-      <scope>compile</scope>
+      <scope>test</scope>
     </dependency>
   </dependencies>
   <build>
@@ -131,29 +131,19 @@
           <include>**/**.java</include>
           <include>**/*.gwt.xml</include>
           <include>**/*.properties</include>
+          <include>META-INF/services/*</include>
         </includes>
       </resource>
     </resources>
+    <testResources>
+      <testResource>
+        <directory>${project.build.directory}/generated-sources/apt-test</directory>
+        <includes>
+          <include>**/**.java</include>
+        </includes>
+      </testResource>
+    </testResources>
     <plugins>
-      <plugin>
-        <groupId>org.codehaus.mojo</groupId>
-        <artifactId>build-helper-maven-plugin</artifactId>
-        <executions>
-          <execution>
-            <id>add-source</id>
-            <phase>generate-sources</phase>
-            <goals>
-              <goal>add-source</goal>
-            </goals>
-            <configuration>
-              <sources>
-                <source>target/generated-sources/apt</source>
-                <source>target/generated-sources/apt-test</source>
-              </sources>
-            </configuration>
-          </execution>
-        </executions>
-      </plugin>
       <plugin>
         <groupId>org.bsc.maven</groupId>
         <artifactId>maven-processor-plugin</artifactId>
@@ -168,9 +158,12 @@
               <compilerArguments>-encoding UTF-8</compilerArguments>
               <outputDirectory>${project.build.directory}/generated-sources/apt</outputDirectory>
               <processors>
-                <processor>org.ez18n.apt.processor.SiteBundleProcessor</processor>
-                <processor>org.ez18n.apt.processor.SiteBundlePropertiesProcessor</processor>
+                <processor>org.ez18n.apt.processor.MobileBundleProcessor</processor>
+                <processor>org.ez18n.apt.processor.MobileBundlePropertiesProcessor</processor>
+                <processor>org.ez18n.apt.processor.DesktopBundleProcessor</processor>
+                <processor>org.ez18n.apt.processor.DesktopBundlePropertiesProcessor</processor>
                 <processor>org.ez18n.apt.processor.CSVReportProcessor</processor>
+                <processor>org.ez18n.apt.processor.MetaInfServicesProcessor</processor>
               </processors>
             </configuration>
           </execution>
@@ -184,7 +177,8 @@
               <compilerArguments>-encoding UTF-8</compilerArguments>
               <outputDirectory>${project.build.directory}/generated-sources/apt-test</outputDirectory>
               <processors>
-                <processor>org.ez18n.apt.processor.TestSiteBundleProcessor</processor>
+                <processor>org.ez18n.apt.processor.TestDesktopBundleProcessor</processor>
+                <processor>org.ez18n.apt.processor.TestMobileBundleProcessor</processor>
               </processors>
               <sourceDirectory>${project.build.sourceDirectory}</sourceDirectory>
             </configuration>

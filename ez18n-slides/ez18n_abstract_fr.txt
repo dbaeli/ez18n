@@ -1,0 +1,38 @@
+Title:
+
+I18N mon amour et Annotation Processing par l'exemple
+
+Summary:
+
+Nous allons vous raconter l'histoire d'une reprise en main de la localisation Java depuis le code source grâce à l'utilisation d'annotations et leur ami Mr Processeur à chaque chapitre.
+
+Chapitre 1: Maman j'ai raté l'avion i18n
+* L'histoire classique de la localisation a postériori d'une application. Mais avec l'introduction d'une annotation pour gérer les clefs et la langue de référence dans le code.
+
+Chapitre 2: Mais où est I18n-Charlie ?
+* Comment s'assurer que tout est localisé et que toutes les clefs sont utiles, générer un fichier excel pour revue.
+
+Chapitre 3: GWT mon amour
+* Comment partager les ressources texte simultanément dans GWT et J2EE
+
+Chapitre 4: Mobile Me
+* Coexistence d'une version web classique et web mobile (libellés simplifiés sur un petit écran), avec le 'deferred binding' de GWT.
+
+Chapitre Bonus: i18n for ever
+* La localisation de masse  (crowd sourcing) avec par exemple crowdin.net
+
+Cette session se veut technique et ludique côté code et démonstrations.
+
+
+Speaker bio:
+
+Dimitri BAELI (Datox, Almonde, PrimaSolution, eXo Platform, Courtanet) baigne dans l'univers Java depuis plus de 10 ans, sa passion pour les usines logicielles, l'organisation des développements, et les méthodes agiles ne l'empêche pas de mettre les mains dans le cambouis et développer des outils utiles aux développeurs.
+
+* Introduction à Scrum 2010 : Vannes, NormandyJUG
+* REX Agilité chez eXo 2010 : Rennes, Kiev (Agileee)
+* Productivité des développements : Nantes 2010, Lille 2008
+* Dojo TDD 2010/11: NormandyJUG, Agile Tour Marseilles, NantesJUG
+
+Co-Création du « Normandy Agile User Group » en 2010, pour l'organisation de conférences et soirées sur le thème de l'agilité. Agile Tour Rouen 2010 & 2011 : 100 personnes autour de l'agilité à Rouen, 10+ intervenants.
+
+Gilles travaille depuis plus de 10 ans pour différents éditeurs de logiciels (ILOG, PrimaSolution, Courtanet) sur des sujets très variés: librairie graphique 2D, moteur de règles, plate-forme de services pour J2EE, code génération de modèle métier. Actuellement, il est architecte pour le site Assuremieux.com (comparateur d'assurances), et aime aussi prendre l'air de temps en temps à San Francisco ou à Anvers.

@@ -28,6 +28,7 @@ import java.util.Map;
 import javax.lang.model.element.TypeElement;
 
 import org.ez18n.apt.LabelTemplateMethod;
+import org.ez18n.apt.TemplateLoader;
 import org.ez18n.apt.base.EGenerationType;
 import org.ez18n.apt.macro.PropertyParsingException;
 
@@ -37,7 +38,7 @@ abstract class BundlePropertiesProcessor extends LabelBundleProcessor {
     public BundlePropertiesProcessor() {
         super(EGenerationType.RESSOURCE);
         try {
-            template = load("BundleProperty.template");
+            template = TemplateLoader.load("BundleProperty.template");
         } catch (IOException e) {
             throw new IllegalStateException(e);
         }

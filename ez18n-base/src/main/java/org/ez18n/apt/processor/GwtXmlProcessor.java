@@ -40,10 +40,11 @@ import javax.tools.FileObject;
 
 import org.apache.commons.io.IOUtils;
 import org.apache.commons.lang3.StringUtils;
-import org.ez18n.apt.LabelBundle;
+import org.ez18n.MessageBundle;
+import org.ez18n.apt.TemplateLoader;
 import org.ez18n.apt.macro.PropertyParsingException;
 
-@SupportedAnnotationTypes(value = "org.ez18n.apt.LabelBundle")
+@SupportedAnnotationTypes(value = "org.ez18n.MessageBundle")
 @SupportedSourceVersion(RELEASE_6)
 public final class GwtXmlProcessor extends AbstractProcessor {
     private final String template;
@@ -51,15 +52,11 @@ public final class GwtXmlProcessor extends AbstractProcessor {
 
     public GwtXmlProcessor() {
         try {
-            template = load("GeneratedGwtXml.template");
-            fragment_template = load("GeneratedGwtXml.factory.template");
+            template = TemplateLoader.load("GeneratedGwtXml.template");
+            fragment_template = TemplateLoader.load("GeneratedGwtXml.factory.template");
         } catch (IOException e) {
             throw new IllegalStateException(e);
         }
-    }
-
-    private static final String load(String resource) throws IOException {
-        return IOUtils.toString(LabelBundle.class.getResourceAsStream(resource));
     }
 
     @Override
@@ -69,7 +66,7 @@ public final class GwtXmlProcessor extends AbstractProcessor {
         }
 
         final List<TypeElement> bundleTypes = new ArrayList<TypeElement>();
-        for (Element element : roundEnv.getElementsAnnotatedWith(LabelBundle.class)) {
+        for (Element element : roundEnv.getElementsAnnotatedWith(MessageBundle.class)) {
             if (element.getKind() != ElementKind.INTERFACE) {
                 continue;
             }
@@ -127,7 +124,7 @@ public final class GwtXmlProcessor extends AbstractProcessor {
         final Map<String, String> conf = new HashMap<String, String>();
         final String messagesFactoryClassName = getMessagesFactoryClassName(bundleTypes, true);
         conf.put("mobile.label.factory.class.name", messagesFactoryClassName + ".MobileLabelFactory");
-        conf.put("site.label.factory.class.name", messagesFactoryClassName + ".SiteLabelFactory");
+        conf.put("desktop.label.factory.class.name", messagesFactoryClassName + ".DesktopLabelFactory");
         try {
             code = replaceProperties(fragment_template, conf, NO_VALUE);
         } catch (PropertyParsingException e) {

@@ -1,0 +1,18 @@
+Multiple devices display survivor guide and a smart use of the Annotation Processing.
+
+Based on some real life stories and best practices collected while coding java applications we have the following stories for you :
+
+Story 1: Mr Apt loves you !  APT Processing explained
+* When and how to use the APT tooling, a smart code generator built-in in the JDK.
+
+Story 2: Tango Charly i18n : i18n and encoding survivor guide
+* Critical information to know about i18n and encoding hell
+
+Story 3: Mobile Me : the ez18n project
+* how to enable multi-device localisation (desktop/mobile)
+* Use an annotation toolset to forget ".properties" files for the rest of your life
+
+Bonus: i18n for ever
+* Some ideas to manage mass i18n management (Crowdsourcing) : how to easily receive high quality contributions from your users. 
+
+All this to show you how multiple devices applications can lead to fun situations and some interesting tooling, and why not more business for all.

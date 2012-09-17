@@ -19,7 +19,12 @@
 			<groupId>commons-io</groupId>
 			<artifactId>commons-io</artifactId>
 		</dependency>
-	</dependencies>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
 	<build>
 		<resources>
 			<resource>
@@ -28,7 +33,7 @@
 			<resource>
 				<directory>${project.build.directory}/generated-resources/apt</directory>
 				<includes>
-					<include>META-INF/services/*</include>
+          <include>META-INF/services/*</include>
 				</includes>
 			</resource>
 		</resources>
