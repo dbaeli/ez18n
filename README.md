@@ -1,3 +1,15 @@
+Ez18n will be at JavaOne 2012
+=============================
+
+[CON11234 - Multidevice Content Display and a Smart Use of Annotation Processing](http://oracleus.activeevents.com/connect/sessionDetail.ww?SESSION_ID=11234)
+
+slides are available
+--------------------
+
+[CON11234_baeli_di_guglielmo.pdf](ez18n-slides/javaone-2012/CON11234_baeli_di_guglielmo.pdf?raw=true "CON11234_baeli_di_guglielmo.pdf")
+
+[CON11234_baeli_di_guglielmo.pptx](ez18n-slides/javaone-2012/CON11234_baeli_di_guglielmo.pptx?raw=true "CON11234_baeli_di_guglielmo.pdf")
+
 ez18n
 =====
 
