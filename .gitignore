@@ -11,3 +11,8 @@ target/
 .idea/
 atlassian-ide-plugin.xml
 *~
+ez18n-base.iml
+ez18n-oldstyle.iml
+ez18n-root.iml
+ez18n-sample.iml
+ez18n-webapp.iml
