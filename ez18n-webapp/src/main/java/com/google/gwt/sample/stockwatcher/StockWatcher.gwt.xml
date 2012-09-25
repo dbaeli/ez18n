@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE module PUBLIC "-//Google Inc.//DTD Google Web Toolkit 1.6.2//EN" "http://google-web-toolkit.googlecode.com/svn/tags/1.6.2/distro-source/core/src/gwt-module.dtd">
 <module rename-to='stockwatcher'>
+
   <!-- Deferred binding for mobile -->
   <define-property name="isMobile" values="yes,no" />
   <property-provider name="isMobile">
@@ -29,6 +30,7 @@
   <!-- Specify the app entry point class. -->
   <entry-point class='com.google.gwt.sample.stockwatcher.client.StockWatcher' />
 
+  <extend-property name="locale" values="fr"/>
 
   <source path='client'>
     <exclude name="**DesktopBundle.java" />
