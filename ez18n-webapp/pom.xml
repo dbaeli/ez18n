@@ -160,6 +160,26 @@
           </execution>
         </executions>
       </plugin>
+	  <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-eclipse-plugin</artifactId>
+        <configuration>
+          <downloadSources>true</downloadSources>
+          <downloadJavadocs>true</downloadJavadocs>
+          <additionalBuildcommands>
+            <buildCommand>
+              <name>com.google.gwt.eclipse.core.gwtProjectValidator</name>
+            </buildCommand>
+          </additionalBuildcommands>
+          <additionalProjectnatures>
+            <projectnature>com.google.gwt.eclipse.core.gwtNature</projectnature>
+          </additionalProjectnatures>
+		  <classpathContainers> 
+            <classpathContainer>com.google.gwt.eclipse.core.GWT_CONTAINER</classpathContainer> 
+            <classpathContainer>org.eclipse.jdt.launching.JRE_CONTAINER</classpathContainer> 
+          </classpathContainers> 
+        </configuration>
+      </plugin>
     </plugins>
   </build>
 </project>
