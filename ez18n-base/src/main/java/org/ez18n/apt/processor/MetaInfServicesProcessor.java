@@ -38,7 +38,7 @@ public class MetaInfServicesProcessor extends AbstractProcessor {
 				processingEnv.getMessager().printMessage(ERROR, e.getMessage());
 			}
 		}
-		return true;
+		return false;
 	}
 
 	private final void write(TypeElement elt) throws IOException {
