@@ -13,3 +13,5 @@ atlassian-ide-plugin.xml
 *~
 *.iml
 gwt-unitCache/
+target-eclipse/
+war/
