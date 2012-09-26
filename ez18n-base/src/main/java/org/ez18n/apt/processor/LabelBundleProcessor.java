@@ -130,13 +130,13 @@ abstract class LabelBundleProcessor extends TemplateAnnotationProcessor<LabelTem
 
 	protected void checkTemplateMethod(TypeElement bundleType, LabelTemplateMethod method) {
 		if (isEmpty(method.getMobile())) {
-			processingEnv.getMessager().printMessage(Kind.WARNING, "mobile label is empty", bundleType);
+			processingEnv.getMessager().printMessage(Kind.WARNING, "mobile message is empty", bundleType);
 		}
 
 		if (method.getBase().equals(method.getMobile())) {
 			processingEnv.getMessager()
 					.printMessage(Kind.WARNING,
-							method.getName() + ": mobile & desktop label is equals, mobile value should be removed",
+							method.getName() + ": duplicate mobile & desktop messages, mobile value can be removed",
 							bundleType);
 		}
 	}
