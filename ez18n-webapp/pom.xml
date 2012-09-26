@@ -16,10 +16,12 @@
       <groupId>org.ez18n</groupId>
       <artifactId>ez18n-base</artifactId>
     </dependency>
+    <!--
     <dependency>
       <groupId>org.ez18n</groupId>
       <artifactId>ez18n-spell6r</artifactId>
     </dependency>
+    -->
     <dependency>
       <groupId>javax.servlet</groupId>
       <artifactId>javax.servlet-api</artifactId>
@@ -108,7 +110,7 @@
                 <processor>org.ez18n.apt.processor.DesktopBundlePropertiesProcessor</processor>
                 <processor>org.ez18n.apt.processor.CSVReportProcessor</processor>
                 <processor>org.ez18n.apt.processor.MetaInfServicesProcessor</processor>
-                <processor>org.ez18n.apt.processor.Spell6rMessagesProcessor</processor>
+                <!--processor>org.ez18n.apt.processor.Spell6rMessagesProcessor</processor-->
               </processors>
             </configuration>
           </execution>

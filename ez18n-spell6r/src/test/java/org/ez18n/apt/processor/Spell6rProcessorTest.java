@@ -20,4 +20,5 @@ public class Spell6rProcessorTest {
     Spell6rChecker spellEn = new Spell6rChecker("en_US");
     assertTrue(spellEn.isCorrect("Hello"));
   }
+
 }
