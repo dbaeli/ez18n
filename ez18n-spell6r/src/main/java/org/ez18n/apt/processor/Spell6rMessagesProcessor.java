@@ -44,7 +44,7 @@ public class Spell6rMessagesProcessor extends AbstractProcessor {
     spell.addSpellCheckListener(new SpellCheckListener() {
       @Override
       public void spellingError(SpellCheckEvent event) {
-        logMessage(Diagnostic.Kind.ERROR, "SPELLCHECK ERROR on word " + event.getInvalidWord() + " in " + spell.getCurrentSource());
+        logMessage(Diagnostic.Kind.WARNING, "SPELLCHECK ERROR on word " + event.getInvalidWord() + " in " + spell.getCurrentSource());
       }
     });
   }
