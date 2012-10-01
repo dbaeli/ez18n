@@ -1,0 +1,43 @@
+package ${package.name};
+
+import com.swabunga.spell.event.CapitalizedWordFinder;
+import com.swabunga.spell.event.SpellCheckEvent;
+import com.swabunga.spell.event.SpellCheckListener;
+import com.swabunga.spell.event.StringWordTokenizer;
+import org.ez18n.runtime.BundleFactory;
+import org.spell6r.Spell6rChecker;
+
+import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.fail;
+import org.junit.BeforeClass;
+
+import ${annotation.qualified.class.name};
+
+public class ${target.class.name}{
+
+    private static Spell6rChecker spell;
+    private static ${bundle.class.name} bundle;
+
+
+    @BeforeClass
+    public static void setUp(){
+        spell=new Spell6rChecker("en_US", "fr_FR");
+        spell.discoverExtendedDic();
+        spell.addSpellCheckListener(new SpellCheckListener(){
+            @Override
+            public void spellingError(SpellCheckEvent event){
+            fail("SPELLCHECK ERROR on word "+event.getInvalidWord()+" in "+spell.getCurrentSource());
+            }
+        });
+        bundle = BundleFactory.get(${bundle.class.name}.class, ${annotation.simple.class.name}.class);
+    }
+
+    private static void checkMessage(String source, String message) {
+        spell.setCurrentSource(source);
+        spell.checkSpelling(new StringWordTokenizer(new CapitalizedWordFinder(message)));
+    }
+
+
+${methods.code}
+
+}

@@ -32,7 +32,7 @@ public final class LabelTemplateMethod extends TemplateMethod {
     }
 
     public String getMobile() {
-        return mobile;
+        return getMobile(true);
     }
 
     public String getMobile(boolean effective) {

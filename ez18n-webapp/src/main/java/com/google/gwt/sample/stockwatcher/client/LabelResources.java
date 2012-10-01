@@ -12,7 +12,7 @@ public interface LabelResources {
     @Message(value = "Stock price", mobile = "Price")
     String price();
 
-    @Message(value = "Change", mobile = "Change")
+    @Message(value = "Change")
     String change();
 
     @Message(value = "Remove", mobile = "Del")

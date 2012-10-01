@@ -10,6 +10,8 @@ slides are available
 
 [CON11234_baeli_di_guglielmo.pptx](ez18n-slides/javaone-2012/CON11234_baeli_di_guglielmo.pptx?raw=true "CON11234_baeli_di_guglielmo.pdf")
 
+http://fr.slideshare.net/gdigugli/con11234-baeli-diguglielmo
+
 ez18n
 =====
 

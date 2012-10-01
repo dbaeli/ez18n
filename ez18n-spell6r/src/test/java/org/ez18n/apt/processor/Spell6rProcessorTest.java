@@ -17,8 +17,9 @@ public class Spell6rProcessorTest {
 
   @Test
   public void testSpellChecker() {
-    Spell6rChecker spellEn = new Spell6rChecker("en_US");
-    assertTrue(spellEn.isCorrect("Hello"));
+    Spell6rMessagesProcessor spellEn = new Spell6rMessagesProcessor();
+    assertTrue(spellEn.spell.isCorrect("Hello"));
+    assertTrue(spellEn.spell.isCorrect("Spellme"));
   }
 
 }

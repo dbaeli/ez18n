@@ -133,7 +133,7 @@ abstract class LabelBundleProcessor extends TemplateAnnotationProcessor<LabelTem
 			processingEnv.getMessager().printMessage(Kind.WARNING, "mobile message is empty", bundleType);
 		}
 
-		if (method.getBase().equals(method.getMobile())) {
+		if (method.getBase().equals(method.getMobile(false))) {
 			processingEnv.getMessager()
 					.printMessage(Kind.WARNING,
 							method.getName() + ": duplicate mobile & desktop messages, mobile value can be removed",
