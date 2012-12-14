@@ -11,7 +11,8 @@ import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.gwt.event.dom.client.KeyCodes;
 import com.google.gwt.event.dom.client.KeyPressEvent;
 import com.google.gwt.event.dom.client.KeyPressHandler;
-import com.google.gwt.i18n.client.DateTimeFormat;
+import com.google.gwt.i18n.shared.DateTimeFormat;
+import com.google.gwt.i18n.shared.DateTimeFormat.PredefinedFormat;
 import com.google.gwt.user.client.Random;
 import com.google.gwt.user.client.Timer;
 import com.google.gwt.user.client.Window;
@@ -36,6 +37,7 @@ public class StockWatcher implements EntryPoint {
     /**
      * Entry point method.
      */
+    @Override
     public void onModuleLoad() {
         // Create table for stock data.
         stocksFlexTable.setText(0, 0, MSG_LR().symbol());
@@ -79,6 +81,7 @@ public class StockWatcher implements EntryPoint {
 
         // Listen for mouse events on the Add button.
         addStockButton.addClickHandler(new ClickHandler() {
+            @Override
             public void onClick(ClickEvent event) {
                 addStock();
             }
@@ -86,6 +89,7 @@ public class StockWatcher implements EntryPoint {
 
         // Listen for keyboard events in the input box.
         newSymbolTextBox.addKeyPressHandler(new KeyPressHandler() {
+            @Override
             public void onKeyPress(KeyPressEvent event) {
                 if (event.getCharCode() == KeyCodes.KEY_ENTER) {
                     addStock();
@@ -130,6 +134,7 @@ public class StockWatcher implements EntryPoint {
         Button removeStockButton = new Button("x");
         removeStockButton.addStyleDependentName("remove");
         removeStockButton.addClickHandler(new ClickHandler() {
+            @Override
             public void onClick(ClickEvent event) {
                 int removedIndex = stocks.indexOf(symbol);
                 stocks.remove(removedIndex);
@@ -171,7 +176,8 @@ public class StockWatcher implements EntryPoint {
             updateTable(prices[i]);
         }
         // Display timestamp showing last refresh.
-        final String dateAsString = MSG_LR().lastUpdate(DateTimeFormat.getMediumDateTimeFormat().format(new Date()));
+        final String dateAsString = MSG_LR().lastUpdate(
+                        DateTimeFormat.getFormat(PredefinedFormat.DATE_TIME_MEDIUM).format(new Date()));
         lastUpdatedLabel.setText(dateAsString);
     }
 
