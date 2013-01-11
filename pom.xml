@@ -12,13 +12,14 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
 
+<!--
   <repositories>
     <repository>
         <id>dbaeli-snapshots</id>
         <url>https://github.com/dbaeli/dbaeli-mvn-repo/raw/master/snapshots</url>
     </repository>
   </repositories>
-
+-->
 
   <dependencyManagement>
     <dependencies>
@@ -34,14 +35,16 @@
       </dependency>
       <dependency>
         <groupId>org.ez18n</groupId>
-        <artifactId>ez18n-spell6r</artifactId>
-        <version>${project.version}</version>
-      </dependency>
-      <dependency>
-        <groupId>org.ez18n</groupId>
         <artifactId>ez18n-webapp</artifactId>
         <version>${project.version}</version>
       </dependency>
+<!--
+      <dependency>
+        <groupId>org.ez18n</groupId>
+        <artifactId>ez18n-spell6r</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+-->
       <dependency>
         <groupId>org.apache.commons</groupId>
         <artifactId>commons-lang3</artifactId>
@@ -79,7 +82,7 @@
     <module>ez18n-base</module>
     <module>ez18n-sample</module>
     <module>ez18n-webapp</module>
-    <module>ez18n-spell6r</module>
+    <!--module>ez18n-spell6r</module-->
   </modules>
   <build>
     <pluginManagement>
